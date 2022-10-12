@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/main.css' %}">
     {% load bootstrap4 %}
     {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
 </head>
 <body>
-<header>
+<header class="wrapper">
     <h1>AskMe</h1>
+    <input type="search" name="question" placeholder="Your question">
+    <button type="submit" class="btn btn-primary"> Ask</button>
+    {% if user.is_authenticated %}
+    <p>Your account doesn't</p>
+    {% else %}
+    <div class="container">
+        <div class="media">
+            <img class="mr-3" src="..." alt="Generic placeholder image">
+            <div class="media-body">
+                <h5 class="mt-0">Registration</h5>
+                <button type="login" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </header>
 {%block content %}
 {%endblock%}
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify"> This page is my homework for the WEB</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+                    <a href="#">AskMe</a>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
 </body>
 </html>

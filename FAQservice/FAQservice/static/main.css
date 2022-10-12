@@ -1,0 +1,19 @@
+body{
+    padding: 50px;
+}
+.wrapper{
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr 2fr;
+    align-content: center;
+}
+div{
+margin:10px;
+self-align: end;
+}
+input{
+width:100%;
+}
+h1{
+    display: inline;
+    margin: 20px;
+}
